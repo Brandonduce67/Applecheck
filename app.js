@@ -1,62 +1,36 @@
-
+// 1. Todo envuelto en el window.onload para que espere a la carga de la web
+window.onload = function() {
+    
+    // 2. Definición de variables (Seleccionamos los elementos del HTML)
     const container = document.querySelector('.carousel-container');
     const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
-
-    function nextSlide() {
-        currentIndex++;
-
-        // Si llegamos al final (después de la 4ta imagen), volvemos a la primera
-        if (currentIndex >= slides.length) {
-            currentIndex = 0;
-        }
-
-        const slideWidth = slides[0].clientWidth;
-        container.scrollTo({
-            left: slideWidth * currentIndex,
-            behavior: 'smooth'
-        });
-    }
-
-    // Cambia la foto cada 5 segundos (5000 milisegundos)
-    let autoPlay = setInterval(nextSlide, 5000);
-
-    // Opcional: Detener el auto-play si el usuario toca el carrusel manualmente
-    container.addEventListener('mousedown', () => clearInterval(autoPlay));
-    container.addEventListener('touchstart', () => clearInterval(autoPlay));
-
-    window.onload = function() {
-    const container = document.querySelector('.carousel-container');
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
     let autoPlay;
 
     if (!container || slides.length === 0) return;
 
+    // 3. La lógica del movimiento automático
     function startAutoPlay() {
         autoPlay = setInterval(() => {
-            currentIndex++;
-            if (currentIndex >= slides.length) {
-                currentIndex = 0;
-            }
-            const slideWidth = container.offsetWidth;
+            // Calcula la posición actual del scroll para saber qué imagen sigue
+            let currentSlide = Math.round(container.scrollLeft / container.offsetWidth);
+            let nextSlide = (currentSlide + 1) % slides.length;
+            
             container.scrollTo({
-                left: slideWidth * currentIndex,
+                left: nextSlide * container.offsetWidth,
                 behavior: 'smooth'
             });
         }, 5000);
     }
 
-    // Si el usuario toca el carrusel, frenamos el movimiento automático
+    // 4. Los "Escuchadores de eventos" (Listeners) para el tacto
     container.addEventListener('touchstart', () => {
-        clearInterval(autoPlay);
+        clearInterval(autoPlay); // Detiene el auto-play cuando tocás
     }, {passive: true});
-
-    // Si deja de tocarlo, podemos hacer que el auto-play vuelva después de un tiempo
+    
     container.addEventListener('touchend', () => {
-        // Opcional: reiniciar el auto-play después de 10 segundos de inactividad
-        setTimeout(startAutoPlay, 5000);
+        startAutoPlay(); // Lo reinicia cuando soltás
     }, {passive: true});
 
+    // 5. Arrancamos el auto-play por primera vez
     startAutoPlay();
 };

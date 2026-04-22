@@ -106,26 +106,34 @@ body {
 
 /* --- Estilos para el Carrusel de iPhones --- */
 
+/* --- Estilos para el Carrusel de iPhones --- */
+
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: 85vh; /* Un poco menos que el total para que se vea que hay contenido abajo */
+    height: 85vh;
     overflow: hidden;
-    background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+    background-color: #000;
 }
 
 .carousel-container {
     display: flex;
     width: 100%;
     height: 100%;
-    overflow-x: scroll;
+    /* Permitimos el scroll manual */
+    overflow-x: auto; 
+    /* El imán para que la imagen se pegue al borde */
     scroll-snap-type: x mandatory;
+    /* Suavidad para los clics en los puntos */
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
+    /* Optimización para táctiles */
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .carousel-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari y Edge */
+    display: none;
 }
 
 .slide {
@@ -133,10 +141,11 @@ body {
     width: 100%;
     height: 100%;
     scroll-snap-align: start;
+    scroll-snap-stop: always; /* Obliga a frenar en cada slide */
     position: relative;
     display: flex;
-    align-items: center; /* Centra el contenido verticalmente */
-    justify-content: flex-start; /* Alinea el texto a la izquierda */
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .slide img {
@@ -153,43 +162,28 @@ body {
 .slide-content {
     position: relative;
     z-index: 2;
-    padding-left: 10%; /* Espaciado desde el borde izquierdo */
+    padding-left: 10%;
     color: #ffffff;
     max-width: 500px;
+    pointer-events: none; /* Para que el texto no moleste al deslizar con el dedo */
 }
 
-.slide-content h1 {
-    font-size: 56px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
-}
+/* ... (Tus estilos de h1, p y btn-primary se mantienen igual) ... */
 
-.slide-content p {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
+.slide-content h1 { font-size: 56px; font-weight: 600; margin-bottom: 10px; }
+.slide-content p { font-size: 24px; opacity: 0.9; margin-bottom: 25px; }
 
-/* Botón estilo Apple */
 .btn-primary {
+    pointer-events: auto; /* El botón sí tiene que recibir clics */
     display: inline-block;
     padding: 12px 24px;
     background-color: #0071e3;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 980px; /* Bordes totalmente redondeados */
-    font-size: 17px;
-    font-weight: 400;
-    transition: background-color 0.3s ease;
+    border-radius: 980px;
 }
 
-.btn-primary:hover {
-    background-color: #0077ed;
-}
-
-/* Indicadores (Puntitos) */
+/* Indicadores */
 .carousel-dots {
     position: absolute;
     bottom: 30px;
@@ -205,25 +199,4 @@ body {
     height: 8px;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.carousel-dots a:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.carousel-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    overflow-x: auto; /* Cambiado de hidden a auto para permitir el dedo */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.carousel-container::-webkit-scrollbar {
-    display: none;
 }
