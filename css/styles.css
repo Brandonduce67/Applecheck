@@ -217,7 +217,13 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
-    overflow-x: hidden; /* Cambiamos scroll por hidden para que el auto-play mande */
+    overflow-x: auto; /* Cambiado de hidden a auto para permitir el dedo */
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth; /* Esto hace que el salto de la 4 a la 1 sea un deslizamiento */
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
 }
