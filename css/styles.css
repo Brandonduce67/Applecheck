@@ -937,25 +937,48 @@ html {
 
 /* Grilla de productos */
 .productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    display: flex; /* O grid, dependiendo de cómo lo hiciste en el index */
+    flex-wrap: nowrap; /* Esto evita que se bajen las tarjetas */
+    justify-content: space-between; 
+    gap: 15px;
+    width: 100%;
+    max-width: 1400px; /* Un ancho grande para que entren las 5 o 4 */
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Tarjetas */
+.familia-container {
+    padding: 60px 20px; /* Espacio arriba/abajo y un poquito a los lados */
+    max-width: 1200px;  /* No deja que el contenido se estire más de esto */
+    margin: 0 auto;     /* CENTRA el contenedor en la pantalla */
+}
+
 .iphone-card-mini {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    transition: all 0.3s ease;
-    border: 1px solid #d2d2d7;
+    width: 100%;
+    max-width: 260;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
     text-align: center;
+    padding: 20px 10px; /* Más espacio interno */
+    background-color: #ffffff;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+    border: 1px solid #f5f5f7; /* Borde casi invisible */
+}
+
+.iphone-card-mini img {
+    width: 100%;
+    max-width: 220px; /* Controlamos que no se haga gigante */
+    height: 220px;
+    object-fit: contain; /* Evita que la foto se deforme */
+    margin-bottom: 30px;
 }
 
 .iphone-card-mini:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transform: translateY(-8px); /* Sube un poquito */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Sombra suave y profunda */
+    border-color: transparent;
 }
 
 .card-tag {
@@ -980,35 +1003,36 @@ html {
 }
 
 .card-info h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
     color: #1d1d1f;
+    margin-bottom: 8px;
 }
 
 .card-specs {
     font-size: 14px;
-    color: #86868b;
-    margin-bottom: 15px;
-    height: 40px; /* Para que todas las tarjetas midan igual aunque el texto varie */
+    color: #86868b; /* Gris Apple */
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
 .card-price {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #1d1d1f;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .btn-ver-mas {
-    display: inline-block;
-    padding: 10px 25px;
+    padding: 8px 20px;
     background-color: #0071e3;
-    color: #fff;
-    border-radius: 20px;
+    color: #ffffff;
+    border-radius: 980px; /* Forma de píldora */
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .btn-ver-mas:hover {

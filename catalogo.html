@@ -1,83 +1,278 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - iPhone Store</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/iphone-12.png">
 </head>
+
 <body>
 
     <header>
         <nav class="navbar">
             <ul class="nav-list">
-                <li><a href="#iphone-products" class="nav-logo"><img src="img/manzanaBlanca.png" alt="Logo"></a></li>
-                <li><a href="#iphone-products">iPhone</a></li>
+                <li><a href="index.html#iphone-products" class="nav-logo"><img src="img/manzanaBlanca.png"
+                            alt="Logo"></a></li>
+                <li><a href="index.html#iphone-products">iPhone</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Accesorios</a>
                     <ul class="dropdown-content">
-                        <li><a href="#accesorios-section">Cargadores</a></li>
-                        <li><a href="#accesorios-section">Auriculares</a></li>
-                        <li><a href="#accesorios-section">Fundas</a></li>
+                        <li><a href="index.html#accesorios-section">Cargadores</a></li>
+                        <li><a href="index.html#accesorios-section">Auriculares</a></li>
+                        <li><a href="index.html#accesorios-section">Fundas</a></li>
                     </ul>
                 </li>
 
-                <li><a href="#nosotros-section">Nosotros</a></li>
+                <li><a href="index.html#nosotros-section">Nosotros</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="catalogo-main">
+   <main id="catalogoCelulares" class="catalogo-main">
         <header class="catalogo-header">
             <h1>Nuestro Catálogo</h1>
             <p>Elegí el equipo que mejor se adapte a vos.</p>
         </header>
 
-        <section class="categoria-section">
-            <div class="catalogo-section-header">
-                <h2>Equipos Nuevos</h2>
-                <span class="badge">Sellados en caja</span>
+        <section class="familia-container">
+            <div class="familia-header">
+                <h2>iPhone 17 Series</h2>
+                <p>El futuro de la innovación.</p>
             </div>
-            
             <div class="productos-grid">
                 <div class="iphone-card-mini">
                     <div class="card-tag">Nuevo</div>
-                    <img src="img/iphone16.png" alt="iPhone 15 Pro">
+                    <img src="img/iphone17promax.png" alt="17 Pro Max">
                     <div class="card-info">
-                        <h3>iPhone 15 Pro</h3>
-                        <p class="card-specs">Titanio, Chip A17 Pro, 128GB</p>
-                        <p class="card-price">USD 1.150</p>
+                        <h3>iPhone 17 Pro Max</h3>
+                        <p class="card-specs">Titanio Aeroespacial, Chip A19</p>
+                        <p class="card-price">Consultar</p>
                         <a href="#" class="btn-ver-mas">Ver detalles</a>
                     </div>
                 </div>
                 <div class="iphone-card-mini">
                     <div class="card-tag">Nuevo</div>
-                    <img src="img/iphone13pro.jpeg" alt="iPhone 15">
+                    <img src="img/iphone17pro.png" alt="17 Pro">
                     <div class="card-info">
-                        <h3>iPhone 15</h3>
-                        <p class="card-specs">Cámara 48MP, Dynamic Island</p>
-                        <p class="card-price">USD 900</p>
+                        <h3>iPhone 17 Pro</h3>
+                        <p class="card-specs">Pantalla ProMotion 120Hz</p>
+                        <p class="card-price">Consultar</p>
                         <a href="#" class="btn-ver-mas">Ver detalles</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="categoria-section reaco-bg">
-            <div class="catalogo-section-header">
-                <h2>Reacondicionados</h2>
-                <span class="badge reaco">Certificados</span>
+        <section class="familia-container">
+            <div class="familia-header">
+                <h2>iPhone 16 Series</h2>
+                <p>Potencia y diseño refinado.</p>
             </div>
-            
             <div class="productos-grid">
                 <div class="iphone-card-mini">
-                    <div class="card-tag reaco">Reaco</div>
-                    <img src="img/iphone11.jpeg" alt="iPhone 13 Pro">
+                    <img src="img/iphone16promax.png" alt="16 Pro Max">
                     <div class="card-info">
-                        <h3>iPhone 13 Pro</h3>
-                        <p class="card-specs">Batería 92%, Estética 10/10</p>
-                        <p class="card-price">USD 720</p>
+                        <h3>iPhone 16 Pro Max</h3>
+                        <p class="card-specs">Chip A18 Pro, Cámara Control</p>
+                        <p class="card-price">USD 1.350</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone16.png" alt="iPhone 16">
+                    <div class="card-info">
+                        <h3>iPhone 16</h3>
+                        <p class="card-specs">Botón de Acción, Dynamic Island</p>
+                        <p class="card-price">USD 950</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="familia-container">
+            <div class="familia-header">
+                <h2>iPhone 15 Series</h2>
+            </div>
+            <div class="productos-grid">
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15pro.png" alt="15 Pro">
+                    <div class="card-info">
+                        <h3>iPhone 15 Pro</h3>
+                        <p class="card-specs">Titanio, Chip A17 Pro</p>
+                        <p class="card-price">USD 1.100</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="familia-container">
+            <div class="familia-header">
+                <h2>iPhone 14 Series</h2>
+            </div>
+            <div class="productos-grid">
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15pro.png" alt="15 Pro">
+                    <div class="card-info">
+                        <h3>iPhone 15 Pro</h3>
+                        <p class="card-specs">Titanio, Chip A17 Pro</p>
+                        <p class="card-price">USD 1.100</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="familia-container">
+            <div class="familia-header">
+                <h2>iPhone 13 Series</h2>
+            </div>
+            <div class="productos-grid">
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15pro.png" alt="15 Pro">
+                    <div class="card-info">
+                        <h3>iPhone 15 Pro</h3>
+                        <p class="card-specs">Titanio, Chip A17 Pro</p>
+                        <p class="card-price">USD 1.100</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone15.png" alt="iPhone 15">
+                    <div class="card-info">
+                        <h3>iPhone 15</h3>
+                        <p class="card-specs">Cámara 48MP, USB-C</p>
+                        <p class="card-price">USD 850</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="familia-container reaco-bg">
+            <div class="familia-header">
+                <h2>Modelos Clásicos</h2>
+                <p>Del iPhone 8 al iPhone 12.</p>
+            </div>
+            <div class="productos-grid">
+                <div class="iphone-card-mini">
+                    <img src="img/iphone14.png" alt="iPhone 14">
+                    <div class="card-info">
+                        <h3>iPhone 14</h3>
+                        <p class="card-specs">Super Retina XDR, Chip A15</p>
+                        <p class="card-price">USD 700</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <img src="img/iphone13.png" alt="iPhone 13">
+                    <div class="card-info">
+                        <h3>iPhone 13</h3>
+                        <p class="card-specs">Doble cámara, Face ID</p>
+                        <p class="card-price">USD 600</p>
+                        <a href="#" class="btn-ver-mas">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="iphone-card-mini">
+                    <div class="card-tag reaco">Reaco</div>
+                    <img src="img/iphone11.jpeg" alt="iPhone 11">
+                    <div class="card-info">
+                        <h3>iPhone 11</h3>
+                        <p class="card-specs">Batería 90%, Impecable</p>
+                        <p class="card-price">USD 350</p>
                         <a href="#" class="btn-ver-mas">Ver detalles</a>
                     </div>
                 </div>
@@ -133,5 +328,6 @@
         </div>
     </footer>
 
-    </body>
+</body>
+
 </html>
