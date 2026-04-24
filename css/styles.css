@@ -211,7 +211,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Estilos de la barra de productos */
+/* Estilos de la barra de productos ******************************************/
 .product-nav {
     background-color: #ffffff;
     border-bottom: 1px solid #d2d2d7;
@@ -258,7 +258,7 @@ html {
     margin-top: 2px;
 }
 
-.section-title {
+.index-huge-title {
     font-size: 80px; /* Tamaño bien grande */
     font-weight: 600;
     text-align: center;
@@ -266,6 +266,8 @@ html {
     margin-top: 40px; /* Espacio arriba */
     margin-bottom: 30px; /* Espacio antes de los iconos */
     letter-spacing: -0.02em; /* Letras un poquito más juntas, estilo Pro */
+    width: 100%;
+    display: block;
 }
 
 /* Ajuste para que en el celular no quede gigante y rompa todo */
@@ -615,7 +617,7 @@ html {
 .main-footer {
     background-color: #1d1d1f; /* Negro Apple */
     color: #f5f5f7;
-    padding: 80px 5% 40px 5%;
+    padding: 10px 5% 40px 5%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -799,4 +801,222 @@ html {
         max-width: 320px;
         text-align: left;
     }
+}
+
+.steps-section {
+    padding: 100px 5%;
+    background-color: #ffffff; /* Fondo blanco puro para resaltar los pasos */
+    text-align: center;
+}
+
+.steps-header {
+    margin-bottom: 60px;
+}
+
+.steps-header h2 {
+    font-size: 48px;
+    color: #1d1d1f;
+    margin-top: 10px;
+    letter-spacing: -0.5px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    flex: 1;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.step-number {
+    font-size: 14px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    background-color: #1d1d1f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-card h3 {
+    font-size: 24px;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 16px;
+    color: #86868b;
+    line-height: 1.6;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .steps-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .steps-header h2 {
+        font-size: 32px;
+    }
+}
+
+/* --- ESTILOS CATÁLOGO --- */
+
+.catalogo-main {
+    background-color: #f5f5f7;
+}
+
+.catalogo-header {
+    text-align: center;
+    padding: 60px 5%;
+    background-color: #fff;
+}
+
+.catalogo-header h1 {
+    font-size: 48px;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.catalogo-header p {
+    font-size: 21px;
+    color: #86868b;
+}
+
+.categoria-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reaco-bg {
+    background-color: #fbfbfd; /* Un tono apenas distinto para diferenciar */
+    max-width: 100%;
+}
+
+.catalogo-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Lo centramos */
+    gap: 15px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.catalogo-section-header h2 {
+    font-size: 32px;
+    color: #1d1d1f;
+    margin: 0; /* Quitamos márgenes que puedan moverlo */
+}
+
+.badge {
+    padding: 4px 12px;
+    background-color: #e8e8ed;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.badge.reaco {
+    background-color: #0071e3;
+    color: #fff;
+}
+
+/* Grilla de productos */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjetas */
+.iphone-card-mini {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid #d2d2d7;
+    text-align: center;
+}
+
+.iphone-card-mini:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #bf4800; /* Color naranja tipo 'novedad' */
+}
+
+.card-tag.reaco {
+    color: #0071e3;
+}
+
+.iphone-card-mini img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.card-info h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+.card-specs {
+    font-size: 14px;
+    color: #86868b;
+    margin-bottom: 15px;
+    height: 40px; /* Para que todas las tarjetas midan igual aunque el texto varie */
+}
+
+.card-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+}
+
+.btn-ver-mas {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #0071e3;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-ver-mas:hover {
+    background-color: #0077ed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .catalogo-header h1 { font-size: 32px; }
+    .productos-grid { grid-template-columns: 1fr; }
 }
