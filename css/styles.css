@@ -348,11 +348,12 @@ html {
 .btn-more {
     background-color: #0071e3;
     color: white;
-    padding: 8px 18px;
-    border-radius: 980px;
+    padding: 10px 25px;
+    border-radius: 20px;
     text-decoration: none;
     font-size: 12px;
-    transition: background-color 0.2s;
+    transition: 0.3s;
+    display: inline-block;
 }
 
 .btn-more:hover {
@@ -391,8 +392,9 @@ html {
 
 .family-section {
     background-color: #f5f5f7; /* El gris claro exacto que usa Apple */
-    padding: 80px 0;           /* Espacio arriba y abajo para que respire */
+    padding: 40px 0;           /* Espacio arriba y abajo para que respire */
     width: 100%;
+    
 }
 
 /* Opcional: Si querés que las tarjetas resalten sobre ese fondo gris, 
@@ -879,11 +881,10 @@ html {
 }
 
 .catalogo-header {
+    padding-top: 50px;    /* Espacio arriba del título principal */
+    padding-bottom: 20px; /* Reducimos el espacio de abajo para que "Equipos Nuevos" suba */
     text-align: center;
-    padding: 60px 5%;
-    background-color: #fff;
 }
-
 .catalogo-header h1 {
     font-size: 48px;
     color: #1d1d1f;
@@ -1043,4 +1044,14 @@ html {
 @media (max-width: 768px) {
     .catalogo-header h1 { font-size: 32px; }
     .productos-grid { grid-template-columns: 1fr; }
+}
+
+/* Esto selecciona solo la primera sección de equipos */
+.family-section:first-of-type {
+    padding-top: 20px; /* Bajamos el padding de 80px a 20px */
+}
+
+.family-header h1 {
+    margin-top: 0; /* Eliminamos cualquier margen que venga de arriba */
+    margin-bottom: 30px;
 }
