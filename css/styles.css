@@ -1,0 +1,994 @@
+/************************************ INDEX *********************************/
+body {
+    margin: 0;
+    font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;
+}
+/* Contenedor de la barra */
+.navbar {
+    background-color: rgba(251, 251, 253, 0.8); /* Efecto traslúcido */
+    backdrop-filter: blur(20px); /* Desenfoque de fondo */
+    height: 44px; /* Altura exacta que usa Apple */
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* Lista de enlaces */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; 
+    justify-content: space-between;
+    margin: 0 auto; /* <--- AÑADE ESTO para que el menú no se pegue a la izquierda */
+    padding: 0 20px;
+}
+/* Estilo de los links */
+.nav-list li a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.nav-list li a:hover {
+    opacity: 1; /* Se aclara un poco al pasar el mouse */
+}
+.nav-logo img {
+    height: 20px; /* Tamaño ideal para que quepa en la barra de 44px */
+    width: auto;  /* Mantiene la proporción */
+    display: block;
+}
+.nav-logo img:hover {
+    opacity: 0.7; /* Efecto sutil al pasar el mouse */
+}
+/* Contenedor del dropdown */
+.dropdown {
+    position: relative;
+}
+/* El menú que está oculto al principio */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95); /* Un poco de transparencia queda mejor */
+    backdrop-filter: blur(10px);
+    min-width: 180px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    z-index: 1;
+    list-style: none;
+    padding: 8px 0;
+    border-radius: 12px;
+    top: 30px; /* Ajustado para que esté cerca del texto */
+    left: 50%;
+    transform: translateX(-50%); /* Estos dos centran el menú respecto a la palabra "Accesorios" */
+    border: 1px solid #e5e5e7; /* Un borde muy finito tipo Apple */
+}
+/* Estilo de los links dentro del desplegable */
+.dropdown-content li a {
+    color: #1d1d1f !important;
+    padding: 10px 20px;
+    display: block;
+    font-size: 13px !important;
+    font-weight: 400; /* Fuente más fina */
+}
+/* Cambio de color al pasar el mouse por las opciones */
+.dropdown-content li a:hover {
+    background-color: #f5f5f7;
+}
+/* Muestra el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px; /* Crea un área invisible para que el mouse no se pierda al bajar */
+}
+/******************** Estilos para el Carrusel de iPhones ********************/
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background-color: #000;
+}
+.carousel-container {
+    
+    width: 100%;
+    height: 100%;
+    -ms-overflow-style: none;
+
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* Esto hace que el scroll manual y por JS sea suave */
+    scroll-behavior: smooth; 
+    scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+.slide {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-stop: always; /* Obliga a frenar en cada slide */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+/* Contenido sobre la imagen */
+.slide-content {
+    position: relative;
+    z-index: 10;
+    padding-left: 10%;
+    color: #ffffff;
+    max-width: 500px;
+    pointer-events: none; /* Para que el texto no moleste al deslizar con el dedo */
+}
+.slide-content a, .slide-content button {
+    pointer-events: auto;
+}
+.slide-content h1 { font-size: 56px; font-weight: 600; margin-bottom: 10px; }
+.slide-content p { font-size: 24px; opacity: 0.9; margin-bottom: 25px; }
+.btn-primary {
+    pointer-events: auto;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0071e3;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 980px;
+}
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 3;
+}
+.carousel-dots a {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+/******************** Estilos para el Carrusel de iPhones ********************/
+
+/* Efecto de bajada suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
+/************************* Estilos de la barra de productos ******************************************/
+.product-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d2d2d7;
+    padding: 20px 0;
+    scroll-margin-top: 44px; /* Para que la navbar no tape los iconos al bajar */
+}
+.product-nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 980px;
+    margin: 0 auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.product-nav-container::-webkit-scrollbar {
+    display: none;
+}
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #1d1d1f;
+    min-width: 80px;
+}
+.product-item img {
+    height: 52px;
+    width: auto;
+    margin-bottom: 8px;
+}
+.product-item span {
+    font-size: 11px;
+}
+.product-item small {
+    color: #bf4800;
+    font-size: 9px;
+    margin-top: 2px;
+}
+.index-huge-title {
+    font-size: 80px; /* Tamaño bien grande */
+    font-weight: 600;
+    text-align: center;
+    color: #1d1d1f;
+    margin-top: 40px; /* Espacio arriba */
+    margin-bottom: 30px; /* Espacio antes de los iconos */
+    letter-spacing: -0.02em; /* Letras un poquito más juntas, estilo Pro */
+    width: 100%;
+    display: block;
+}
+/* Ajuste para que en el celular no quede gigante y rompa todo */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 48px;
+        margin-top: 20px;
+    }
+}
+/* Contenedor de la Tarjeta */
+.family-card {
+    flex: 0 0 380px;   /* Ancho fijo para que no se deformen en PC */
+    background-color: transparent; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: center; /* La tarjeta se centra sola al soltar el scroll */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (max-width: 1024px) {
+    .family-card {
+        flex: 0 0 320px; /* Un poco más angostas en notebooks */
+    }
+}
+.family-card:hover {
+    transform: scale(1.02);
+}
+.family-card h3 {
+    font-size: 28px; /* Un poco más grande */
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+/* Imagen del Producto */
+.product-image-container {
+    width: 100%;
+    height: 450px; /* Altura fija para que todas las fotos empiecen y terminen igual */
+    margin-bottom: 25px;
+}
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la foto llene el espacio sin deformarse */
+    border-radius: 30px; /* Bordes redondeados bien Apple */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+/* Círculos de Colores */
+.color-dots {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+/* Textos */
+.product-description {
+    font-size: 16px;
+    max-width: 280px; /* Para que el texto no se estire a lo ancho */
+    margin-bottom: 25px;
+}
+/* Botones y Acciones */
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto;
+}
+.btn-more {
+    background-color: #0071e3;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    display: inline-block;
+}
+.btn-more:hover {
+    background-color: #0077ed;
+}
+.btn-buy {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+.btn-buy:hover {
+    text-decoration: underline;
+}
+/* Contenedor del botón inferior */
+.view-all-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    padding: 40px 0 20px 0; /* Espacio arriba para no pegarse a las fotos */
+    width: 100%;
+}
+
+/* Estilo del link/botón */
+.btn-view-all {
+    color: #0066cc; /* Azul Apple */
+    text-decoration: none;
+    font-size: 19px; /* Un poco más grande para que se vea bien */
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent; /* Para un efecto de subrayado suave */
+    padding-bottom: 2px;
+}
+.btn-view-all:hover {
+    color: #004499; /* Un azul un poco más oscuro al pasar el mouse */
+    border-bottom: 1px solid #004499; /* Aparece el subrayado */
+}
+/*TARJETAS DE CARGADORES*/
+/* Contenedor principal de categorías */
+.featured-categories {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Espacio entre la tarjeta de cargadores, auriculares, etc. */
+    background-color: #ffffff;
+}
+.category-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #86868b;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+/* Botón llamativo */
+.btn-main {
+    background-color: #0071e3;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 980px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    transition: background-color 0.2s;
+}
+.btn-main:hover {
+    background-color: #0077ed;
+}
+.accesorios-compact {
+    padding: 80px 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+.accesorios-header h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #1d1d1f;
+}
+.accesorios-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las 3 tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.card-small {
+    flex: 1; /* Hace que las 3 midan lo mismo */
+    background-color: #f5f5f7;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Imagen arriba, texto abajo */
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+.card-small:hover {
+    transform: translateY(-5px); /* Efecto de levante al pasar el mouse */
+}
+.card-small-image {
+    width: 100%;
+    height: 250px; /* Altura fija para que todas sean iguales */
+}
+.card-small-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-small-content {
+    padding: 25px;
+}
+.card-small-content h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #1d1d1f;
+}
+.link-blue {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+.link-blue:hover {
+    text-decoration: underline;
+}
+/* RESPONSIVE: Si se ve en celular, se ponen una abajo de otra */
+@media (max-width: 768px) {
+    .accesorios-grid {
+        flex-direction: column;
+    }
+}
+.nosotros-container {
+    padding: 80px 5%;
+    background-color: #f5f5f7; /* Gris claro para separar de la sección blanca de arriba */
+}
+.nosotros-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.nosotros-label {
+    color: #0066cc;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.nosotros-content h2 {
+    font-size: 42px;
+    color: #1d1d1f;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+.nosotros-content p {
+    font-size: 19px;
+    color: #86868b;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    line-height: 1.5;
+}
+/* La grilla de beneficios */
+.nosotros-features {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #d2d2d7;
+    padding-top: 40px;
+    gap: 20px;
+}
+.feature {
+    flex: 1;
+}
+.feature-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+.feature h4 {
+    font-size: 17px;
+    color: #1d1d1f;
+    margin-bottom: 5px;
+}
+.feature p {
+    font-size: 14px;
+    color: #86868b;
+    margin: 0;
+}
+/* Responsive para que en el celu no se rompa */
+@media (max-width: 768px) {
+    .nosotros-features {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+/* =========================================
+   FOOTER COMPLETO - ESTILO APPLE HÍBRIDO
+   ========================================= */
+.main-footer {
+    background-color: #1d1d1f; /* Negro Apple */
+    color: #f5f5f7;
+    padding: 10px 5% 40px 5%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-bottom: 1px solid #424245;
+    padding-bottom: 40px;
+    margin-top: 30px;
+}
+
+/* Columna de la Marca */
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: #86868b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Columna de Navegación */
+.footer-links {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-links h4 {
+    font-size: 12px;
+    color: #f5f5f7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    color: #86868b;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+}
+
+/* Columna de Redes Sociales (Híbrida) */
+.footer-social {
+    flex: 1.5;
+    min-width: 280px;
+}
+
+.footer-social h4 {
+    font-size: 12px;
+    color: #f5f5f7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 300px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    background-color: #2c2c2e;
+    padding: 10px 15px;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.social-item:hover {
+    background-color: #3d3d3f;
+    border-color: #0071e3;
+    transform: translateX(8px); /* Efecto de desplazamiento */
+}
+
+.social-icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #0071e3;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Gradiente para el icono de Instagram */
+.social-item:first-child .social-icon-box {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Color para el icono de WhatsApp */
+.social-item:nth-child(2) .social-icon-box {
+    background-color: #25D366;
+}
+
+.social-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-text span {
+    font-size: 11px;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.social-text strong {
+    font-size: 14px;
+    color: #f5f5f7;
+    font-weight: 500;
+}
+
+/* Parte Inferior (Copyright) */
+.footer-bottom {
+    padding-top: 40px;
+    text-align: center;
+    color: #86868b;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* Ajustes para Celulares */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .social-wrapper {
+        align-items: center;
+    }
+    
+    .social-item {
+        width: 100%;
+        max-width: 320px;
+        text-align: left;
+    }
+}
+
+.steps-section {
+    padding: 100px 5%;
+    background-color: #ffffff; /* Fondo blanco puro para resaltar los pasos */
+    text-align: center;
+}
+
+.steps-header {
+    margin-bottom: 60px;
+}
+
+.steps-header h2 {
+    font-size: 48px;
+    color: #1d1d1f;
+    margin-top: 10px;
+    letter-spacing: -0.5px;
+}
+
+.steps-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    flex: 1;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.step-number {
+    font-size: 14px;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    background-color: #1d1d1f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-card h3 {
+    font-size: 24px;
+    color: #1d1d1f;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 16px;
+    color: #86868b;
+    line-height: 1.6;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .steps-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .steps-header h2 {
+        font-size: 32px;
+    }
+}
+
+/* --- ESTILOS CATÁLOGO --- */
+
+.catalogo-main {
+    background-color: #f5f5f7;
+}
+
+.catalogo-header {
+    padding-top: 50px;    /* Espacio arriba del título principal */
+    padding-bottom: 20px; /* Reducimos el espacio de abajo para que "Equipos Nuevos" suba */
+    text-align: center;
+}
+.catalogo-header h1 {
+    font-size: 48px;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.catalogo-header p {
+    font-size: 21px;
+    color: #86868b;
+}
+
+.categoria-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reaco-bg {
+    background-color: #fbfbfd; /* Un tono apenas distinto para diferenciar */
+    max-width: 100%;
+}
+
+.catalogo-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Lo centramos */
+    gap: 15px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.catalogo-section-header h2 {
+    font-size: 32px;
+    color: #1d1d1f;
+    margin: 0; /* Quitamos márgenes que puedan moverlo */
+}
+
+.badge {
+    padding: 4px 12px;
+    background-color: #e8e8ed;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.badge.reaco {
+    background-color: #0071e3;
+    color: #fff;
+}
+
+/* Grilla de productos */
+.productos-grid {
+    display: flex; /* O grid, dependiendo de cómo lo hiciste en el index */
+    flex-wrap: nowrap; /* Esto evita que se bajen las tarjetas */
+    justify-content: space-between; 
+    gap: 15px;
+    width: 100%;
+    max-width: 1400px; /* Un ancho grande para que entren las 5 o 4 */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.familia-container {
+    padding: 60px 20px; /* Espacio arriba/abajo y un poquito a los lados */
+    max-width: 1200px;  /* No deja que el contenido se estire más de esto */
+    margin: 0 auto;     /* CENTRA el contenedor en la pantalla */
+}
+
+.iphone-card-mini {
+    width: 100%;
+    max-width: 260;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    text-align: center;
+    padding: 20px 10px; /* Más espacio interno */
+    background-color: #ffffff;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+    border: 1px solid #f5f5f7; /* Borde casi invisible */
+}
+
+.iphone-card-mini img {
+    width: 100%;
+    max-width: 220px; /* Controlamos que no se haga gigante */
+    height: 220px;
+    object-fit: contain; /* Evita que la foto se deforme */
+    margin-bottom: 30px;
+}
+
+.iphone-card-mini:hover {
+    transform: translateY(-8px); /* Sube un poquito */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Sombra suave y profunda */
+    border-color: transparent;
+}
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #bf4800; /* Color naranja tipo 'novedad' */
+}
+
+.card-tag.reaco {
+    color: #0071e3;
+}
+
+.iphone-card-mini img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.card-info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+.card-specs {
+    font-size: 14px;
+    color: #86868b; /* Gris Apple */
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 25px;
+}
+
+.btn-ver-mas {
+    padding: 8px 20px;
+    background-color: #0071e3;
+    color: #ffffff;
+    border-radius: 980px; /* Forma de píldora */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+    background-color: #0077ed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .catalogo-header h1 { font-size: 32px; }
+    .productos-grid { grid-template-columns: 1fr; }
+}
+
+/*********************** FAMILI GRID ****************************/
+
+/* Esto selecciona solo la primera sección de equipos */
+.family-section:first-of-type {
+    padding-top: 20px; /* Bajamos el padding de 80px a 20px */
+}
+
+.family-header h1 {
+    margin-top: 0; /* Eliminamos cualquier margen que venga de arriba */
+    margin-bottom: 30px;
+}
+.family-grid {
+    /*justify-content: flex-start; /* Las pega una al lado de la otra desde el inicio */
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 24px;         /* Espacio entre tarjetas */
+    padding: 20px 40px; /* Alineado con el header */
+    overflow-x: auto;  /* Habilita el scroll horizontal */
+    scroll-snap-type: x mandatory; /* Activa el "imán" de posición */
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Oculta barra en Firefox */
+    -webkit-overflow-scrolling: touch; /* Inercia en iOS */
+}
+.family-grid::-webkit-scrollbar {
+    display: none;             /* Oculta la barra de scroll en Chrome/Safari */
+}
+.family-header {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 40px; /* Margen interno para que el título no toque el borde */
+    text-align: left;
+}
+.family-section {
+    background-color: #f5f5f7; 
+    padding: 60px 0;   /* Espacio para que respire la sección */
+    width: 100%;
+}
+.family-grid-wrapper {
+    max-width: 1440px; /* Ancho máximo estándar de Apple */
+    margin: 0 auto;    /* Centra el bloque en la pantalla */
+    overflow: hidden;  /* Corta el exceso de las tarjetas para que no rompan el layout */
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .family-header h1 {
+        font-size: 32px; /* Título más chico en celulares */
+    }
+    
+    .family-card {
+        flex: 0 0 280px; /* Tamaño ideal para smartphones */
+    }
+    
+    .family-grid {
+        padding: 20px 20px; /* Menos margen lateral en móviles */
+    }
+}
+
+/*********************** FAMILI GRID ****************************/
