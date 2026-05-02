@@ -726,7 +726,7 @@ html {
 }
 
 .steps-section {
-    padding: 100px 5%;
+    padding: 90px 5%;
     background-color: #ffffff; /* Fondo blanco puro para resaltar los pasos */
     text-align: center;
 }
@@ -1013,7 +1013,7 @@ html {
 }
 .family-section {
     background-color: #f5f5f7; 
-    padding: 60px 0;   /* Espacio para que respire la sección */
+    padding: 30px 0;   /* Espacio para que respire la sección */
     width: 100%;
 }
 .family-grid-wrapper {
