@@ -1,19 +1,40 @@
 /************************************ INDEX *********************************/
 body {
+    /*margin: 0;
+    font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;*/
+
     margin: 0;
     font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
     background-color: #ffffff;
+    padding-top: 44px;
+    overflow-x: hidden; /* Esto mata cualquier barrita horizontal rebelde */
+    width: 100%;
 }
 /* Contenedor de la barra */
-.navbar {
-    background-color: rgba(251, 251, 253, 0.8); /* Efecto traslúcido */
-    backdrop-filter: blur(20px); /* Desenfoque de fondo */
-    height: 44px; /* Altura exacta que usa Apple */
+.navbar {/*
+    background-color: rgba(251, 251, 253, 0.8); /* Efecto traslúcido 
+    backdrop-filter: blur(20px); /* Desenfoque de fondo 
+    height: 44px; /* Altura exacta que usa Apple 
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
+    z-index: 1000;*/
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ahora sí, el 100% será exacto gracias a box-sizing */
+    height: 44px;
+    background-color: rgba(251, 251, 253, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
     z-index: 1000;
+    /* Eliminamos cualquier margen que pueda tener */
+    margin: 0;
 }
 /* Lista de enlaces */
 .nav-list {
