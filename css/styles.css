@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #f5f5f7;
     padding-top: 44px;
     overflow-x: hidden; /* Esto mata cualquier barrita horizontal rebelde */
     width: 100%;
@@ -1045,3 +1045,58 @@ html {
 }
 
 /*********************** FAMILI ****************************/
+
+/* Contenedor de la imagen del accesorio */
+#tarjetaAccesorios .product-image-container {
+    background-color: #fbfbfd; /* El blanco/gris exacto de Apple */
+    border-radius: 20px;
+    height: 280px;            /* Altura fija y elegante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.4s ease; /* Efecto suave al pasar el mouse */
+    margin-bottom: 15px;
+}
+
+/* La imagen propiamente dicha */
+#tarjetaAccesorios .family-card img {
+    max-width: 80%;           /* No dejamos que toque los bordes */
+    max-height: 80%;          /* Mantiene el producto contenido */
+    object-fit: contain;      /* Respeta la forma original del cargador */
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05)); /* Sombra real al objeto */
+}
+
+/* Efecto Hover para que se sienta vivo */
+#tarjetaAccesorios .family-card:hover .product-image-container {
+    transform: scale(1.02);   /* Crece apenas un poquito */
+}
+
+/* Tipografía de la tarjeta */
+#tarjetaAccesorios h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+#tarjetaAccesorios .product-description {
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.4;
+}
+#tarjetaAccesorios .btn-more {
+    background-color: #0071e3; /* Azul Apple */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+#tarjetaAccesorios .btn-more:hover {
+    background-color: #0077ed;
+}

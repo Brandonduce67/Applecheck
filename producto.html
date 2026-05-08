@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applecheck</title>
+    <link rel="icon" href="img/iphone-12.png">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Estilos rápidos para que se vea pro */
+        .detalle-container {
+            display: flex;
+            gap: 50px;
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+            align-items: center;
+        }
+        .foto-grande img {
+            max-width: 450px;
+            border-radius: 20px;
+        }
+        .info-texto h1 { font-size: 40px; margin-bottom: 10px; }
+        .precio { font-size: 28px; color: #0071e3; font-weight: 600; }
+        .btn-comprar {
+            display: inline-block;
+            background: #0071e3;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-logo"><img src="img/manzanaBlanca.png" alt="Logo"></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">iPhone</a>
+                    <ul class="dropdown-content">
+                        <li><a href="catalogo.html">Equipos Nuevos</a></li>
+                        <li><a href="catalogo.html#equiposReacondicionados">Reacondicionados</a></li>
+                        <li><a href="catalogo.html#ofertas">Ofertas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Accesorios</a>
+                    <ul class="dropdown-content">
+                        <li><a href="accesorios.html#cargadoresId">Cargadores</a></li>
+                        <li><a href="accesorios.html#airpodsId">Auriculares</a></li>
+                        <li><a href="accesorios.html#fundasId">Fundas</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#nosotros-section">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="detalle-container">
+        <div class="foto-grande">
+            <img id="foto-producto" src="" alt="Cargando...">
+        </div>
+        <div class="info-texto">
+            <h1 id="nombre-producto"></h1>
+            <p class="precio" id="precio-producto"></p>
+            
+            <div class="especificaciones">
+                <p><strong>Salud de Batería:</strong> <span id="bateria"></span></p>
+                <p><strong>Capacidad:</strong> <span id="capacidad"></span></p>
+                <p><strong>Estado:</strong> <span id="estado"></span></p>
+                <p id="detalles-tecnicos" style="margin-top: 15px; color: #6e6e73;"></p>
+            </div>
+
+            <a href="#" id="btn-whatsapp" class="btn-comprar">Comprar por WhatsApp</a>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>iPhone Store</h3>
+                    <p>Especialistas en tecnología Apple.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#">iPhones</a></li>
+                        <li><a href="#accesorios-section">Accesorios</a></li>
+                        <li><a href="#nosotros-section">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Contacto y Redes</h4>
+                    <div class="social-wrapper">
+
+                        <a href="https://instagram.com/applecheck__" target="_blank" class="social-item">
+                            <div class="social-icon-box">IG</div>
+                            <div class="social-text">
+                                <span>Seguinos en Instagram</span>
+                                <strong>@Apple Check</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/5491128574431" target="_blank" class="social-item">
+                            <div class="social-icon-box">WA</div>
+                            <div class="social-text">
+                                <span>Escribinos por WhatsApp</span>
+                                <strong>+54 9 1128574431</strong>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 iPhone Store. Todos los derechos reservados.</p>
+                    <p>Diseñado por [Brandon Ducé] - Estudiante de Licenciatura en informatica UNAHUR</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- El script que hace la magia -->
+    <script src="detalle.js"></script>
+</body>
+
+</html>

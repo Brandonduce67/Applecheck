@@ -1,0 +1,68 @@
+[
+  {
+    "id": "iphone-17-pro-max",
+    "nombre": "iPhone 17 Pro Max",
+    "color": "Titanio Negro",
+    "capacidad": "256GB",
+    "salud_bateria": "100%",
+    "precio": "450.000",
+    "estado": "Nuevo en Caja",
+    "detalles": "Último modelo lanzado. Sellado de fábrica con garantía oficial.",
+    "imagen": "img/iphone17proMax.jpeg"
+  },
+  {
+    "id": "iphone-15-pro-max",
+    "nombre": "iPhone 15 Pro Max",
+    "color": "Titanio Natural",
+    "capacidad": "256GB",
+    "salud_bateria": "98%",
+    "precio": 1200,
+    "estado": "Excelente estado",
+    "detalles": "Sin detalles estéticos. Incluye cable original y funda de regalo.",
+    "imagen": "img/iphone15proMax2.jpeg"
+  },
+  {
+    "id": "iphone-14-pro-max",
+    "nombre": "iPhone 14 Pro Max",
+    "color": "Deep Purple",
+    "capacidad": "128GB",
+    "salud_bateria": "92%",
+    "precio": 950,
+    "estado": "Muy bueno",
+    "detalles": "Mínimos detalles de uso en el marco. Pantalla impecable.",
+    "imagen": "img/iphone14proMax2.jpeg"
+  },
+  {
+    "id": "iphone-14-pro",
+    "nombre": "iPhone 14 Pro",
+    "color": "Space Black",
+    "capacidad": "128GB",
+    "salud_bateria": "90%",
+    "precio": 880,
+    "estado": "Excelente",
+    "detalles": "Batería original. Nunca fue abierto para reparación.",
+    "imagen": "img/iphone14pro2.jpeg"
+  },
+  {
+    "id": "iphone-14",
+    "nombre": "iPhone 14",
+    "color": "Blue",
+    "capacidad": "128GB",
+    "salud_bateria": "95%",
+    "precio": 700,
+    "estado": "Como nuevo",
+    "detalles": "Viene con protector de pantalla instalado. Muy poco uso como tu prima",
+    "imagen": "img/iphone14-2.jpeg"
+  },
+  {
+    "id": "iphone-13-pro",
+    "nombre": "iPhone 13 Pro",
+    "color": "Sierra Blue",
+    "capacidad": "256GB",
+    "salud_bateria": "87%",
+    "precio": 780,
+    "estado": "Bueno",
+    "detalles": "Detalle estético cerca del puerto de carga. FaceID perfecto.",
+    "imagen": "img/iphone13pro2.jpeg"
+  }
+]
